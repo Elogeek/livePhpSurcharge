@@ -25,8 +25,9 @@ class Utilisateur {
     /** set the user's name
      * @param string $nom the user name
      */
-    public function setNom(string $nom): void {
+    public function setNom(string $nom): Utilisateur {
         $this->nom =$nom;
+        return $this;
     }
 
     /** (uniqid = renvoie un string avec un préfixe si précissé)

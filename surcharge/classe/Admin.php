@@ -18,6 +18,7 @@ class Admin extends  Utilisateur {
     }
 
     public function display() {
+        echo $this->setNom('toto')->getNom();
         //fera la même chose (sur la classe enft,Admin)
         echo "<p>" . self::TEST . "</p>";
         echo "<p>" . Admin::TEST . "</p>";
@@ -25,5 +26,13 @@ class Admin extends  Utilisateur {
         //sur la classe parent
         echo "<p>" . parent::TEST . "</p>";
         echo "<p>" . Utilisateur::TEST . "</p>";
+    }
+
+    /** tentative surcharge
+     * @return string
+     */
+    public function getNom(): string
+    {
+        return "coucou : " . parent::getNom();
     }
 }
